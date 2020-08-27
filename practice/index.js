@@ -25,7 +25,8 @@ for (let i = 0; i < animationTargetElements.length; i++) {
     if (text_split === ' ') {
       textsArray.push(' ');
     } else {
-      textsArray.push('<span style="animation-delay: ' + (j * .05) + 's;">' + text_split + '</span>');
+      // textsArray.push('<span><span style="animation-delay: ' + ((j * .1) + .1) + 's;">' + text_split + '</span></span>');
+      textsArray.push('<span><span>' + text_split + '</span></span>');
     }
   }
   for (let k = 0; k < textsArray.length; k++) {
@@ -33,11 +34,3 @@ for (let i = 0; i < animationTargetElements.length; i++) {
     targetElement.innerHTML += textsArray[k];
   }
 }
-// document.getElementById('button').addEventListener('click', (e) => {
-//   e.preventDefault();
-//   document.getElementById('box').classList.add('active');
-// });
-
-// const box = document.getElementById('box');
-// const box_list = box.classList;
-// console.log(box_list);

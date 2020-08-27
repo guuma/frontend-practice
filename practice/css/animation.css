@@ -214,26 +214,63 @@ main{
 .textAnimation {
   color: #fff;
   font-size: 70px;
-  /* letter-spacing: 0.01em; */
 }
 
 .textAnimation:not(:first-of-type) {
   margin-top: 20px;
 }
 
-@keyframes showText {
+@keyframes showTextFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(60px);
   }
   100% {
     opacity: 1;
   }
 }
 
+@keyframes showTextFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showUpBottomText {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes showUpTopText {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 .textAnimation span {
   display: inline-block;
-  animation: showText 1s backwards;
+}
+
+.textAnimation > span {
+  overflow: hidden;
+}
+
+.textAnimation > span:nth-of-type(odd) > span {
+  animation: 1s showUpTopText ease-out backwards;
+}
+
+.textAnimation > span:nth-of-type(even) > span {
+  animation: 1s showUpBottomText ease-out backwards;
 }
 
 @media screen and (min-width: 769px) {
