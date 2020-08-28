@@ -20,7 +20,7 @@ a {
   color: #333333;
 }
 
-.test  a:nth-of-type(2) {
+.test a:nth-of-type(2) {
   color: red;
 }
 
@@ -37,7 +37,7 @@ main {
   border-radius: 5px;
 }
 
-main > h1 {
+main>h1 {
   background-color: #ccc;
   padding: 15px;
   font-size: 30px;
@@ -51,20 +51,20 @@ main > h1 {
   justify-content: space-between;
 }
 
-.article > li {
+.article>li {
   width: 31%;
   border: 1px solid #000;
 }
 
-main .article > li .thumnail {
+main .article>li .thumnail {
   background-image: url(/img/world_heritage_img_main.jpg);
   background-size: cover;
-  background-position:center;
+  background-position: center;
   background-repeat: no-repeat;
   height: 200px;
 }
 
-main .article > li p {
+main .article>li p {
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
@@ -72,23 +72,73 @@ main .article > li p {
   padding: 10px;
 }
 
-/* .box {
-  width: 600px;
-  height: 300px;
-  background-image: linear-gradient(60deg, transparent, #000);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
+.pseudo_test p,
+.pseudo_test2 span,
+.pseudo_test3 {
+  color: red;
+  font-size: 20px;
   font-weight: bold;
-} */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 5px;
+  width: 250px;
+  height: 40px;
+}
 
+input:checked+.check {
+  background-color: #ddd;
+  color: red;
+}
+
+
+.parent-menu>li>a {
+  color: blue;
+}
+
+.parent-menu a+ul a {
+  color: green;
+}
+
+.parent-menu>li:not(:first-of-type) {
+  background-color: #ddd;
+  margin-top: 10px;
+}
+
+.pseudo-link {
+  color: aqua;
+}
+
+.pseudo-link[target="_blank"] {
+  font-size: 20px;
+  color: blue;
+}
+
+.pseudo-link[href^="https"] {
+  color: green;
+}
+
+.pseudo-link[href$="html"] {
+  background-color: green;
+}
+
+th:not(:empty) {
+  background-color: #ddd;
+}
+
+input[type="checkbox"]:checked+label {
+  font-weight: bold;
+}
+
+input:focus {
+  border: 1px solid red;
+  outline: none;
+}
 
 .layouts {
   display: flex;
 }
-
 
 .box:nth-of-type(2) {
   background-color: #aaa;
@@ -124,7 +174,7 @@ main .article > li p {
   border-radius: 10px;
 
   visibility: hidden;
-  opacity:0;
+  opacity: 0;
   transform: translate(10px);
   transition: 1s;
 }
@@ -140,10 +190,14 @@ main .article > li p {
     opacity: 0;
     transform: translate(20px, 20px);
   }
-  30%, 60% {
+
+  30%,
+  60% {
     background-color: red;
   }
-  50%, 80% {
+
+  50%,
+  80% {
     background-color: blue;
   }
 }
@@ -173,10 +227,12 @@ main .article > li p {
   h1 {
     font-size: 60px;
   }
+
   .layouts {
     display: block;
   }
-  .pc-view{
+
+  .pc-view {
     display: none;
   }
 }
@@ -186,10 +242,12 @@ main .article > li p {
     font-size: 80px;
     color: blue;
   }
+
   .layouts {
     display: block;
   }
-  .pc-view{
+
+  .pc-view {
     display: none;
   }
 }
@@ -198,6 +256,7 @@ main .article > li p {
   h1 {
     color: yellow;
   }
+
   .test {
     display: none;
   }
