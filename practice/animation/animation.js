@@ -34,3 +34,12 @@ for (let i = 0; i < animationTargetElements.length; i++) {
     targetElement.innerHTML += textsArray[k];
   }
 }
+
+function loaded() {
+  const loading = document.getElementById('loading');
+  loading.classList.remove('active');
+}
+
+window.addEventListener('load', () => {
+  setTimeout(loaded, 2000);
+});

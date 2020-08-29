@@ -273,6 +273,38 @@ main{
   animation: 1s showUpBottomText ease-out backwards;
 }
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes flashing {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loadingText {
+  animation: .5s flashing infinite;
+}
+
 @media screen and (min-width: 769px) {
   .button1:hover {
     opacity: 0.5;
