@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-family: Dosis,Helvetica Neue,Helvetica,Arial,Verdana,Roboto,"游ゴシック",Yu Gothic,"游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3",Hiragino Kaku Gothic Pro,Meiryo UI,"メイリオ",Meiryo,"ＭＳ Ｐゴシック",MS PGothic,sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.header {
+  background: url(../img/topimg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 90vh;
+}
+
+.header::before {
+  content: '';
+  background-image: linear-gradient(#f66,#ccc);
+  opacity: .7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header .siteTitle {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: .05em;
+  background: #f66;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.header .titles {
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: .5em;
+  text-align: center;
+}
+
+.header .titles a {
+  display: block;
+  width: 80%;
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .titles > a > p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.description {
+  line-height: 1.8;
+  padding: 15px;
+  background: #eee;
+  margin-bottom: 40px;
+}
+
+.description b {
+  font-weight: bold;
+}
+
+.description p:not(:first-of-type) {
+  margin-top: 1em;
+}
+
+.articles li a {
+  display: block;
+  border: 1px solid #000;
+  transition: .3s;
+}
+
+.articles > li:not(:first-of-type) {
+  margin-top: 40px;
+}
+
+.articles li a:hover {
+  box-shadow: 0 2px 7px 3px #888;
+  transform: translateY(-2px);
+  opacity: .8;
+}
+
+.articles li a > div.articlesImage {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.articles li a h2.articlesTitle {
+  font-weight: bold;
+  color: #fff;
+  font-size: 30px;
+  padding: 15px;
+  line-height: 1.2;
+  background: #f66;
+}
+
+.articles li a p.articlesDescription {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+  padding: 15px;
+  line-height: 1.8;
+}
+
+.articles > .result > a > .articlesImage {
+  background-image: url(../img/articleimg-result.jpg);
+  background-position: center 40%;
+}
+
+.articles > .prepare > a > .articlesImage {
+  background-image: url(../img/articleimg-prepare.jpeg);
+  background-position: center 85%;
+}
+
+.articles ul.columnList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articles li.css,
+.articles li.html {
+  width: 48%;
+  margin-top: 40px;
+}
+
+.articles .html a,
+.articles .css a {
+  height: 100%;
+}
+
+.articles .html > a > .articlesImage {
+  background-image: url(../img/articleimg-html.jpeg);
+  background-position: center top;
+}
+
+.articles .html > a > .articlesTitle {
+  background-color: #ee955d;
+}
+
+.articles .css > a > .articlesImage {
+  background-image: url(../img/articleimg-css.png);
+  background-position: center bottom;
+}
+
+.articles .css > a > .articlesTitle {
+  background-color: #5ad8d8;
+}
+
+.articles > .js > a > .articlesTitle {
+  background-color: #fd3;
+}
+
+.articles > .js > a > .articlesImage {
+  background-image: url(../img/articleimg-javascript.jpg);
+  background-position: center;
+}
+
+.articles > .terminal > a > .articlesTitle {
+  background-color: #845ad8;
+}
+
+.articles > .terminal > a > .articlesImage {
+  background-image: url(../img/articleimg-terminal.jpg);
+  background-position: center bottom;
+}
+
+.attention {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  background: #ffe6e6;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  .header .titles a {
+    font-size: 26px;
+    width: 90%;
+  }
+  .articles li a h2.articlesTitle {
+    padding: 10px;
+    font-size: 20px;
+  }
+  .articles li a p.articlesDescription {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .articles ul.columnList {
+    flex-direction: column;
+  }
+  .articles li.css,
+  .articles li.html {
+    width: 100%;
+  }
+  .attention {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
