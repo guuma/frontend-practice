@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+#test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+#test.active {
+  background-color: yellow;
+}
+
+li {
+  width: 100px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+li:not(:first-of-type) {
+  margin-top: 5px;
+}
+
+li.test {
+  opacity: 0;
+}
