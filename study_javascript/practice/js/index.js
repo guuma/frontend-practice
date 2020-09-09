@@ -26,9 +26,6 @@ const applePrice = 120;
 const apple = document.getElementById('apple');
 apple.innerText = applePrice * tax;
 
-testElement.addEventListener('click', () => {
-  testElement.classList.toggle('active');
-});
 
 testElement.addEventListener('click', () => {
   const listElement = document.querySelectorAll('.list li');
@@ -37,4 +34,15 @@ testElement.addEventListener('click', () => {
     console.log(listElement[i]);
     listElement[i].classList.toggle('test');
   }
+});
+
+// 0~1未満の数値をランダムに生成する
+// randomNumber * 5がとりうる最大値は4.99999..なので5未満の数値がランダムに生成される;
+const randomNumber = Math.random();
+
+testElement.addEventListener('click', () => {
+  testElement.classList.toggle('active');
+  const omikuji = ['大吉', '中吉', '小吉', '凶', '大凶']
+  const omikujiItem = omikuji[Math.floor(Math.random() * omikuji.length)]
+  testElement.textContent = `本日の運勢は${omikujiItem}です`
 });
