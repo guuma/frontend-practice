@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+main {
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  margin: 50px auto;
+  background-color: #ddd;
+  border-radius: 5px;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
 #test {
   display: flex;
   justify-content: center;
