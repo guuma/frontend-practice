@@ -60,7 +60,6 @@ if (score < 20 && score > 10) {
   output('スコアはそれ以外です！！');
 }
 
-
 const a = 2;
 b = 3;
 
@@ -69,8 +68,46 @@ if (a == '2') {
   console.log('true！！');
 }
 
-
 //  厳密等価演算子(オペランド同士が、型を変換することなく厳密に等しいならば真を返します。)ので、以下の場合、falseを返す
-if(a === '2') {
-  console.log('表示されない')
+if (a === '2') {
+  console.log('表示されない');
 }
+
+const weathers = ['晴れ', '曇り', '雨', '雪', '台風', '雷'],
+  weathersRandomNumber = Math.floor(randomNumber * weathers.length),
+  weatherElement = document.getElementById('weather');
+
+function weatherMessage(text) {
+  document.getElementById('weathermessage').textContent = text;
+}
+weatherElement.textContent = `今日の天気は${weathers[weathersRandomNumber]}です！！`;
+switch (weathers[weathersRandomNumber]) {
+  case '晴れ':
+    weatherMessage('日傘をを持っていった方が良いかも...');
+    break;
+  case '曇り':
+    weatherMessage('今日は一日曇っているみたいです。');
+    break;
+  case '雨':
+    weatherMessage('傘を持っていきましょう！');
+    break;
+  case '雪':
+    weatherMessage('今日は寒そうなのでコートを着ていきましょう');
+    break;
+  default:
+    weatherMessage('今日の天気は荒れる予報です');
+}
+
+const priceText = (price, element) => {
+  // 関数内で定義された関数は、関数スコープになるので関数の外から呼び出すことはできない
+  const caluclation = (price) => {
+    return `${price}円の商品は、税込み価格${Math.floor(price * tax)}円になります`;
+  };
+  document.getElementById(element).textContent = caluclation(price);
+};
+
+priceText(Math.floor(randomNumber * 500), 'price');
+
+// これはスコープ外から呼び出そうとしているのでエラーになる
+// console.log(caluclation(120))
+// > Uncaught ReferenceError: caluclation is not defined at index.js:113
