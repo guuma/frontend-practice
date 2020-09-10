@@ -31,3 +31,9 @@ li:not(:first-of-type) {
 li.test {
   opacity: 0;
 }
+#parts {
+  display: none;
+}
+#parts.active {
+  display: block;
+}
