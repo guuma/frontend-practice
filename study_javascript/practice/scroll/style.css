@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+
+main.test {
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 20px;
+}
+
+li:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+#scrollValue {
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #aaa;
+}
+
+#contents {
+  display: none;
+}
+
+#contents.active {
+  display: block;
+}
