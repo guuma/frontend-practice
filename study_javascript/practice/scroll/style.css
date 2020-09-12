@@ -43,3 +43,9 @@ li:not(:first-of-type) {
 #contents.active {
   display: block;
 }
+
+#time {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
