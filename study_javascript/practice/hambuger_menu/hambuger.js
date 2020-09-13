@@ -5,6 +5,7 @@ const getElementbyId = (element) => {
 document.addEventListener('DOMContentLoaded', () => {
   getElementbyId('menuButton').addEventListener('click', () => {
     getElementbyId('menuButton').classList.toggle('active');
+    getElementbyId('mask').classList.toggle('active');
   });
 });
 
