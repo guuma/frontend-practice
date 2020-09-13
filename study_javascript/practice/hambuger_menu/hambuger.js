@@ -2,14 +2,9 @@ const getElementbyId = (element) => {
   return document.getElementById(element);
 };
 
-// アロー関数を使った場合、thisをbindするのでグローバルオブジェクトを参照している
 document.addEventListener('DOMContentLoaded', () => {
-  // windowオブジェクトを返す
-  console.log(this);
   getElementbyId('menuButton').addEventListener('click', () => {
-    // windowオブジェクトを返す
-    console.log(this);
-    getElementbyId('menuButton').classList.toggle('test');
+    getElementbyId('menuButton').classList.toggle('active');
   });
 });
 

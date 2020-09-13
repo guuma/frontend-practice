@@ -6,22 +6,25 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
 body {
   height: 200vh;
 }
 
 .menuButton {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   height: 80px;
   width: 80px;
-  background: pink;
   position: fixed;
+  z-index: 1;
   top: 0;
   right: 0;
+  background-color: #fff;
 }
-
 
 /* ハンバーガーメニュー */
 .menuButton > div {
@@ -32,6 +35,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+  transition: ease-out .3s;
 }
 
 .menuButton>div:nth-of-type(1) {
@@ -40,4 +44,58 @@ body {
 
 .menuButton>div:nth-of-type(3) {
   transform: translate(-50%, 15px);
+}
+
+.menuButton.active>div:nth-of-type(1) {
+  transform: translate(-50%, 0)  rotate(45deg);
+}
+
+.menuButton.active>div:nth-of-type(2) {
+  opacity: 0;
+  transform: translateX(80%);
+}
+
+.menuButton.active>div:nth-of-type(3) {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.header-navigation__ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateX(-150%);
+  visibility: hidden;
+  transition: .3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-navigation__ul__li {
+  font-size: 2em;
+  transition: .1s;
+}
+
+.header-navigation__ul__li:hover {
+  opacity: .5;
+  transform: scale(1.5);
+}
+
+.header-navigation__ul__li a {
+  color: #fff;
+}
+
+header .menuButton.active + .header-navigation>.header-navigation__ul {
+  transform: none;
+  visibility: visible;
+}
+
+.top-image-container {
+  height: 100vh;
+  width: 100vw;
+  background: url(top_img.jpg) no-repeat center/cover;
 }
