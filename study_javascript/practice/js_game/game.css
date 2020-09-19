@@ -58,6 +58,16 @@ section h2 {
   transition: .3s;
 }
 
+.killedNumbers {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nowKilledNumber::after {
+  content: "/";
+  margin: 0 5px;
+}
+
 .logs {
   border: 1px solid #000;
   border-radius: 5px;
@@ -87,4 +97,70 @@ section h2 {
 .attack.deactive {
   pointer-events: none;
   opacity: .5;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mask.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 500px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalTitle {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+.modalNextButton {
+  margin: 50px auto 0;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #28f;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalNextButton:hover {
+  opacity: 0.7;
+}
+
+.modalNextButton.hidden {
+  display: none;
 }

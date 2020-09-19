@@ -29,11 +29,24 @@
         <div id="maxPlayerHp"></div>
       </div>
 
+      <div class="playerStatus">
+        <div class="killedNumbers">
+          討伐数:
+          <div id="nowKilledNumber"></div>
+          <div id="targetKillNumber"></div>
+        </div>
+      </div>
+
       <ul id="logs" class="logs"></ul>
 
       <div id="attack" class="attack">攻撃する</div>
     </section>
   </main>
+  <div class="mask" id="mask"></div>
+  <div class="modal" id="modal">
+    <h2 id="modalTitle" class="modalTitle"></h2>
+    <a class="modalNextButton" id="modalNextButton">次へ進む</a>
+  </div>
 </body>
 <script src="js/main.js"></script>
 </html>
